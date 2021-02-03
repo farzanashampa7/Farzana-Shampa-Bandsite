@@ -1,2 +1,119 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-BoldIt.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-BoldIt.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Heavy.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-HeavyIt.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-HeavyIt.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Light.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Medium.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Thin.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-UltLt.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-UltLt.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+.nav-logo__link {
+  font-family: "Avenir Next";
+  font-weight: 400;
+  font-size: 4rem;
+}
 
-/*# sourceMappingURL=main.css.map *//*# sourceMappingURL=main.css.map */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Avenir Next";
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  background-color: #323232;
+  height: 15vh;
+}
+.nav-logo {
+  margin: 0;
+  padding-top: 1.5em;
+  text-align: center;
+}
+.nav-logo__link {
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 0;
+}
+.nav-list__item {
+  list-style: none;
+  color: #AFAFAF;
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+.nav-list__active {
+  color: #ffffff;
+}/*# sourceMappingURL=main.css.map */

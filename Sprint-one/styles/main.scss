@@ -1,0 +1,46 @@
+@use './partials/resets' as *;
+@use './partials/variables' as *;
+@use './partials/typography' as *;
+
+.nav {
+    background-color: $bg-primary;
+    height: 15vh;
+
+    &-logo {
+        margin: 0;
+        padding-top: 1.5em;
+        text-align: center;
+
+        &__link {
+            text-decoration: none;
+            color: $color-white;
+            text-transform: uppercase;
+            
+        }
+    }
+
+    &-list {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 0;
+       
+
+        &__item {
+            list-style: none;
+            color: $color-primary;
+            font-size: 2.2rem;
+            font-weight: 500;
+        }
+
+        &__active {
+            color: $color-white;
+        }
+    }
+}
+
+// .hero-container {
+//     background-image: ;
+// }
+
+
+
