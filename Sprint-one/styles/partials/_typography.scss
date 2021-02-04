@@ -1,3 +1,5 @@
+@use './mixins' as *;
+
 @font-face {
     font-family: 'Avenir Next';
     src: url('../assets/fonts/AvenirNextLTPro-BoldIt.woff2') format('woff2'),
@@ -88,31 +90,17 @@
     font-display: swap;
 }
 
-// @font-face {
-//     font-family: 'Avenir Next';
-//     src: url('../assets/fonts/AvenirNextLTPro-Light.woff2') format("woff2");
-//   }
-
-// @font-face {
-//     font-family: 'Avenir Next';
-//     src: url('../assets/fonts/AvenirNextLTPro-Heavy.woff2') format("woff2");
-// }
-
-// @font-face {
-//     font-family: 'Avenir Next';
-//     src: url('../assets/fonts/AvenirNextLTPro-Thin.woff2') format("woff2");
-// }
-
-// @font-face {
-//     font-family: 'Avenir Next';
-//     src: url('../assets/fonts/AvenirNextLTPro-Regular.woff2') format("woff2");
-// }
-
 .nav-logo__link {
     font-family: 'Avenir Next';
     font-weight: 400;
     font-size: 4rem;
 
+    @include tablet {
+        font-size: 3rem;
+    }
+
 }
+
+
 
 

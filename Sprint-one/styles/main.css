@@ -73,6 +73,11 @@
   font-weight: 400;
   font-size: 4rem;
 }
+@media screen and (min-width: 768px) {
+  .nav-logo__link {
+    font-size: 3rem;
+  }
+}
 
 html {
   font-size: 62.5%;
@@ -89,14 +94,43 @@ body {
   padding: 0;
 }
 
+.wrapper {
+  max-width: 1240px;
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .wrapper {
+    max-width: 1023px;
+  }
+}
+
 .nav {
   background-color: #323232;
   height: 15vh;
+}
+@media screen and (min-width: 768px) {
+  .nav {
+    height: 10vh;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav-bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 }
 .nav-logo {
   margin: 0;
   padding-top: 1.5em;
   text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .nav-logo {
+    font-size: 2rem;
+    padding-top: 0.5rem;
+  }
 }
 .nav-logo__link {
   text-decoration: none;
@@ -108,12 +142,233 @@ body {
   justify-content: space-around;
   padding-left: 0;
 }
+@media screen and (min-width: 768px) {
+  .nav-list {
+    margin-left: 5rem;
+  }
+}
 .nav-list__item {
   list-style: none;
   color: #AFAFAF;
   font-size: 2.2rem;
   font-weight: 500;
+  margin-top: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .nav-list__item {
+    margin: 0 3rem;
+  }
 }
 .nav-list__active {
   color: #ffffff;
+}
+
+.hero-container {
+  background-image: url(../assets/images/Photo-gallery-11.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 65vw;
+  display: flex;
+  align-items: center;
+}
+.hero-container__text {
+  margin: 0;
+  padding-left: 1em;
+  font-size: 8vw;
+  color: #ffffff;
+}
+
+.about__title {
+  margin: 5rem 0 3rem;
+  font-size: 3.6rem;
+  text-transform: capitalize;
+  color: #323232;
+}
+.about__image {
+  width: 100%;
+  height: 50vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.block-quote {
+  margin: 0;
+}
+.block-quote__text {
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: #323232;
+  letter-spacing: 0.1rem;
+}
+@media screen and (min-width: 768px) {
+  .block-quote__text {
+    font-weight: 700;
+  }
+}
+.block-quote__footer {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #323232;
+}
+
+.details {
+  margin-top: 5rem;
+}
+.details__title {
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: #000;
+  color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .details__title {
+    font-weight: 700;
+  }
+}
+.details__container {
+  display: flex;
+}
+.details__text {
+  font-size: 2rem;
+  line-height: 1.6;
+  color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .details__text {
+    width: calc(50% - 2rem);
+    margin-right: 2rem;
+  }
+}
+
+.gallery {
+  background-color: #FAFAFA;
+}
+.gallery__title {
+  font-size: 3.6rem;
+  color: #323232;
+  padding-top: 4rem;
+}
+@media screen and (min-width: 768px) {
+  .gallery__container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.gallery__container__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .gallery__container__image {
+    width: calc(33.33% - 2rem);
+    margin: 1rem;
+  }
+}
+
+.contact {
+  background-color: #323232;
+  margin-top: 3rem;
+}
+.contact-lists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .contact-lists {
+    padding-top: 3rem;
+  }
+}
+.contact-lists__info {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .contact-lists__info {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.contact-lists__info__title {
+  font-size: 3.6rem;
+  color: #ffffff;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .contact-lists__info__socials {
+    margin-left: 5rem;
+  }
+}
+.contact-lists__info__socials__icons {
+  margin-right: 3rem;
+}
+.contact-lists__logo {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .contact-lists__logo {
+    display: inherit;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact-lists__logo__link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+.contact-info {
+  margin-top: 4rem;
+}
+@media screen and (min-width: 768px) {
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.contact-info__individuals {
+  margin: 2rem 0;
+}
+.contact-info__individuals__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+.contact-info__individuals__address {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin: 0.5rem 0;
+}
+.contact-info__individuals__email {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 3rem;
+}
+
+.copyright {
+  padding: 1rem 0 2rem;
+}
+@media screen and (min-width: 768px) {
+  .copyright {
+    display: flex;
+  }
+}
+.copyright__text {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
+}
+@media screen and (min-width: 768px) {
+  .copyright__text {
+    margin-right: 1rem;
+  }
 }/*# sourceMappingURL=main.css.map */
