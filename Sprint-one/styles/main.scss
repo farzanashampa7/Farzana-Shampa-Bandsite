@@ -4,29 +4,30 @@
 @use './partials/mixins' as *;
 
 .wrapper {
-    max-width: 1240px;
-    width: 90%;
+    max-width: 1270px;
+    width: 95%;
     margin: 0 auto;
 
-    @include tablet {
-        max-width: 1023px;
+    @include desktop {
+        width: 90%;
     }
 }
 
 .nav {
     background-color: $bg-primary;
-    height: 15vh;
+    height: 12vh;
+    position: relative;
 
     @include tablet {
-        height: 10vh;
+        // height: 10vh;
+        height: 70px;
         
     }
 
     &-bar {
         @include tablet {
             height: 100%;
-            display: flex;
-            align-items: center;
+            @include flex-align;
         }
     }
 
@@ -44,12 +45,18 @@
             text-decoration: none;
             color: $color-white;
             text-transform: uppercase;
+            font-weight: $font-normal;
+            font-size: 4rem;
+
+            @include tablet {
+                font-size: 3rem;
+            }
             
         }
     }
 
     &-list {
-        display: flex;
+        @include flex-align;
         justify-content: space-around;
         padding-left: 0;
 
@@ -62,16 +69,37 @@
             list-style: none;
             color: $color-primary;
             font-size: 2.2rem;
-            font-weight: 500;
+            font-weight: $font-medium;
             margin-top: .5rem;
 
             @include tablet {
                 margin: 0 3rem;
+                font-size: 1.8rem;
             }
         }
 
         &__active {
             color: $color-white;
+
+            &::after {
+                content: '';
+                width: 60vw;
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                border: 4px solid $color-white;
+    
+                
+                @include tablet {
+                    width: 100px;
+                    left: 235px;
+                    border-width: 3px;
+                }
+
+                @include desktop {
+                    left: 250px;
+                }
+            }
         }
     }
 }
@@ -81,31 +109,67 @@
     background-size: cover;
     background-position: center;
     height: 65vw;
-    display: flex;
-    align-items: center;
+    position: relative;
+    @include flex-align;
+
+    &::before {
+        content: '';
+        width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: block;
+        background: rgba(0,0,0,.5);
+        // z-index: 1;
+    }
+
+    @include tablet {
+        height: 55vw;
+    }
 
     &__text {
+        width: 70vw;
         margin: 0;
-        padding-left: 1em;
         font-size: 8vw;
-        // width: 400px;
         color: $color-white;
-    
+        position: absolute;
+        top: 35%;
+        z-index: 100;
+
+        @include tablet {
+            font-size: 6rem;
+            width: 600px;
+        }
+
+        @include desktop {
+            font-size: 7rem;
+            width: 700px;
+        }
     }
 }
 
 .about {
     &__title {
         margin: 5rem 0 3rem;
-        font-size: 3.6rem;
+        font-size: 3.4rem;
         text-transform: capitalize;
         color: $bg-primary;
+
+        @include tablet {
+            font-size: 3.6rem;
+        }
     }
+
     &__image {
         width: 100%;
         height: 50vw;
-        object-fit: cover;
-        object-position: center;
+        @include image-fit;
+
+        @include tablet {
+            height: 45vw;
+        }
     }
 }
 
@@ -113,8 +177,8 @@
     margin: 0;
 
     &__text {
-        font-size: 2.6rem;
-        font-weight: 500;
+        font-size: 2.2rem;
+        font-weight: $font-medium;
         color: $bg-primary;
         letter-spacing: .1rem;
 
@@ -123,8 +187,8 @@
         }
     }
     &__footer {
-        font-size: 2.2rem;
-        font-weight: 500;
+        font-size: 2rem;
+        font-weight: $font-medium;
         color: $bg-primary;
     }
 }
@@ -134,17 +198,23 @@
 
     &__title {
         font-size: 2.6rem;
-        font-weight: 500;
+        font-weight: $font-medium;
         color: #000;
         color: $bg-primary;
+        margin-bottom: 1rem;
 
         @include tablet {
-            font-weight: 700;
+            font-weight: $font-heavy;
         }
     }
 
     &__container {
         display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+        }
     }
 
     &__text {
@@ -155,18 +225,23 @@
         @include tablet {
             width: calc(50% - 2rem);
             margin-right: 2rem;
+            font-size: 1.8rem;
         }
-
     }
 }
 
 .gallery {
     background-color: $color-tertiary;
+    padding-bottom: 3rem;
 
     &__title{
-        font-size: 3.6rem;
+        font-size: 3.4rem;
         color: $bg-primary;
         padding-top: 4rem;
+
+        @include tablet {
+            font-size: 3.6rem;
+        }
     }
 
     &__container {
@@ -176,14 +251,14 @@
             flex-wrap: wrap;
         }
         &__image {
-            object-fit: cover;
-            object-position: center;
+            @include image-fit;
             width: 100%;
             margin-bottom: 2rem;
 
             @include tablet {
-                width: calc(33.33% - 2rem);
-                margin: 1rem;
+                width: calc(30%);
+                margin: 1.2rem;
+                flex-grow: 1;
             }
         }
     }
@@ -191,12 +266,12 @@
 
 .contact {
     background-color: $bg-primary;
-    margin-top: 3rem;
+    // margin-top: 3rem;
 
     &-lists {
-        display: flex;
+       @include flex-align;
         justify-content: space-between;
-        align-items: center;
+        padding-top: 3rem;
 
         @include tablet {
             padding-top: 3rem;
@@ -212,10 +287,15 @@
             }
 
             &__title {
-                font-size: 3.6rem;
+                font-size: 4rem;
                 color: $color-white;
                 margin: 0;
-               
+                padding-bottom: 2rem;
+
+                @include tablet {
+                    padding-top: 2rem;
+                    font-size: 3.6rem;
+                }
             }
 
             &__socials {
@@ -224,11 +304,10 @@
                  }
 
                 &__icons {
+                    // width: 30px;
                     margin-right: 3rem;
                 }
             }
-
-    
         }
 
         &__logo {
@@ -243,11 +322,10 @@
                     text-decoration: none;
                     color: $color-white;
                     font-size: 3rem;
-                    font-weight: 400;
+                    font-weight: $font-normal;
                     // padding-top: 1.5rem;
                     text-transform: uppercase;
                 }
-                
             }
         }
     }
@@ -256,30 +334,52 @@
         margin-top: 4rem;
 
         @include tablet {
+            margin-top: 0;
             display: flex;
             justify-content: space-between;
         }
 
+        @include desktop {
+            justify-content: flex-start;
+        }
+
+        &__section {
+            @include desktop {
+                margin-right: 5rem;
+            }
+        }
+
         &__individuals {
-            margin: 2rem 0;
+            margin: 3rem 0;
 
             &__title {
-                font-size: 1.6rem;
-                font-weight: 700;
+                font-size: 2.4rem;
+                font-weight: $font-medium;
                 color: $color-white;
                 margin: 0;
+
+                @include tablet {
+                    font-size: 1.7rem;
+                }
             }
             &__address {
-                font-size: 1.4rem;
-                // font-weight: 400;
+                font-size: 1.8rem;
                 color: $color-white;
                 margin: .5rem 0;
+
+                @include tablet {
+                    font-size: 1.5rem;
+                }
             }
 
             &__email {
-                font-size: 1.4rem;
+                font-size: 1.8rem;
                 color: $color-white;
                 margin-bottom: 3rem;
+
+                @include tablet {
+                    font-size: 1.5rem;
+                }
             }
         }
         
@@ -295,18 +395,12 @@
 
     &__text {
         color: $color-white;
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         margin: .5rem 0;
 
         @include tablet {
             margin-right: 1rem;
+            font-size: 1.5rem;
         }
     }
 }
-
-
-
-
-
-
-
