@@ -4,23 +4,25 @@
 @use './partials/mixins' as *;
 
 .wrapper {
-    max-width: 1270px;
+    max-width: 1275px;
     width: 95%;
     margin: 0 auto;
 
     @include desktop {
+        max-width: 1500px;
         width: 90%;
     }
 }
 
+
+//------nav------//
 .nav {
     background-color: $bg-primary;
-    height: 12vh;
+    height: 110px;
     position: relative;
 
     @include tablet {
-        // height: 10vh;
-        height: 70px;
+        height: 80px;
         
     }
 
@@ -34,6 +36,7 @@
     &-logo {
         margin: 0;
         padding-top: 1.5em;
+       
         text-align: center;
 
         @include tablet {
@@ -46,11 +49,7 @@
             color: $color-white;
             text-transform: uppercase;
             font-weight: $font-normal;
-            font-size: 4rem;
-
-            @include tablet {
-                font-size: 3rem;
-            }
+            font-size: 2.8rem;
             
         }
     }
@@ -63,52 +62,61 @@
         @include tablet {
             margin-left: 5rem;
         }
-       
-
+    
         &__item {
             list-style: none;
-            color: $color-primary;
-            font-size: 2.2rem;
-            font-weight: $font-medium;
-            margin-top: .5rem;
-
+            
+            
             @include tablet {
                 margin: 0 3rem;
                 font-size: 1.8rem;
             }
-        }
 
-        &__active {
-            color: $color-white;
+            &__link {
+                color: $color-primary;
+                font-size: 2rem;
+                font-weight: $font-medium;
+                margin-top: .5rem;
+                text-decoration: none;
+                transition: color .5s ease;
 
-            &::after {
-                content: '';
-                width: 60vw;
-                position: absolute;
-                bottom: 0px;
-                left: 0px;
-                border: 4px solid $color-white;
-    
-                
-                @include tablet {
-                    width: 100px;
-                    left: 235px;
-                    border-width: 3px;
+                &:hover {
+                    cursor: pointer;
+                    color: $color-hover;
                 }
-
-                @include desktop {
-                    left: 250px;
+            }
+        
+            &--active {
+                color: $color-white;
+                position: relative;
+    
+                &::after {
+                    content: '';
+                    width: 60vw;
+                    position: absolute;
+                    bottom: -26px;
+                    left: -23vw;
+                    border: 4px solid $color-white;
+        
+                    
+                    @include tablet {
+                        width: 105px;
+                        left: -5px;
+                        bottom: -29px;
+                    }
                 }
             }
         }
     }
 }
 
+
+//--------main-------//
 .hero-container {
     background-image: url(../assets/images/Photo-gallery-11.jpg);
     background-size: cover;
     background-position: center;
-    height: 65vw;
+    height: 70vw;
     position: relative;
     @include flex-align;
 
@@ -122,7 +130,6 @@
         left: 0;
         display: block;
         background: rgba(0,0,0,.5);
-        // z-index: 1;
     }
 
     @include tablet {
@@ -153,7 +160,7 @@
 .about {
     &__title {
         margin: 5rem 0 3rem;
-        font-size: 3.4rem;
+        font-size: 3rem;
         text-transform: capitalize;
         color: $bg-primary;
 
@@ -177,17 +184,17 @@
     margin: 0;
 
     &__text {
-        font-size: 2.2rem;
+        font-size: 2rem;
         font-weight: $font-medium;
         color: $bg-primary;
         letter-spacing: .1rem;
 
         @include tablet {
-            font-weight: 700;
+            font-weight: $font-heavy;
         }
     }
     &__footer {
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: $font-medium;
         color: $bg-primary;
     }
@@ -197,7 +204,7 @@
     margin-top: 5rem;
 
     &__title {
-        font-size: 2.6rem;
+        font-size: 2.2rem;
         font-weight: $font-medium;
         color: #000;
         color: $bg-primary;
@@ -218,8 +225,9 @@
     }
 
     &__text {
-        font-size: 2rem;
-        line-height: 1.6;
+        font-size: 1.8rem;
+        line-height: 1.7;
+        letter-spacing: .1rem;
         color: $bg-primary;
 
         @include tablet {
@@ -235,7 +243,7 @@
     padding-bottom: 3rem;
 
     &__title{
-        font-size: 3.4rem;
+        font-size: 3rem;
         color: $bg-primary;
         padding-top: 4rem;
 
@@ -255,8 +263,12 @@
             width: 100%;
             margin-bottom: 2rem;
 
+            &:hover {
+                filter: grayscale(100%);
+            }
+
             @include tablet {
-                width: calc(30%);
+                width: 30%;
                 margin: 1.2rem;
                 flex-grow: 1;
             }
@@ -264,9 +276,10 @@
     }
 }
 
+
+//-------footer-------//
 .contact {
     background-color: $bg-primary;
-    // margin-top: 3rem;
 
     &-lists {
        @include flex-align;
@@ -287,7 +300,7 @@
             }
 
             &__title {
-                font-size: 4rem;
+                font-size: 3.4rem;
                 color: $color-white;
                 margin: 0;
                 padding-bottom: 2rem;
@@ -304,7 +317,6 @@
                  }
 
                 &__icons {
-                    // width: 30px;
                     margin-right: 3rem;
                 }
             }
@@ -321,9 +333,8 @@
                 @include tablet {
                     text-decoration: none;
                     color: $color-white;
-                    font-size: 3rem;
+                    font-size: 2.8rem;
                     font-weight: $font-normal;
-                    // padding-top: 1.5rem;
                     text-transform: uppercase;
                 }
             }
@@ -353,7 +364,7 @@
             margin: 3rem 0;
 
             &__title {
-                font-size: 2.4rem;
+                font-size: 2rem;
                 font-weight: $font-medium;
                 color: $color-white;
                 margin: 0;
