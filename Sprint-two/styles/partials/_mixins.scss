@@ -1,0 +1,23 @@
+@use './variables' as *;
+
+@mixin flex-align {
+    display: flex;
+    align-items: center;
+}
+
+@mixin image-fit {
+    object-fit: cover;
+    object-position: center;
+}
+    
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint){
+        @content;
+    }
+}
