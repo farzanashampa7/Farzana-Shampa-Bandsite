@@ -176,7 +176,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .nav__item--active::after {
-    width: 105px;
+    width: 90px;
     left: -5px;
     bottom: -29px;
   }
@@ -410,8 +410,11 @@ body {
 .comments__input {
   padding: 2rem 0;
   margin-bottom: 2rem;
-  border: 2px solid #323232;
+  border: 2px solid #AFAFAF;
   border-radius: 0.5rem;
+}
+.comments__input:focus {
+  border-color: #323232;
 }
 .comments__btn {
   padding: 1.5rem 0;
@@ -459,6 +462,7 @@ textarea[placeholder] {
   height: 60px;
   border-radius: 50%;
   margin-right: 2rem;
+  background-color: black;
 }
 .article__main {
   display: flex;

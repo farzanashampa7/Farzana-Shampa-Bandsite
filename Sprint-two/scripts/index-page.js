@@ -43,7 +43,6 @@ function commentLists(arrayList) {
         let commentImage = document.createElement('img');
         commentImage.classList.add('article__image');
         commentImage.setAttribute('src', arrayList[i].image);
-        commentImage.setAttribute('alt', 'Image of comment author');
         commentItem.appendChild(commentImage);
 
         let commentDiv = document.createElement('div');
@@ -81,15 +80,15 @@ form.addEventListener('submit', event => {
 
     let newName = event.target.userName.value;
     let newDate = new Date();
+    let newImage = '';
     let dd = String(newDate.getDate()).padStart(2, '0');
     let mm = String(newDate.getMonth() + 1).padStart(2, '0');
     let yyyy = newDate.getFullYear();
     newDate = `${mm}/ ${dd}/ ${yyyy}`;
     let newText = event.target.userComment.value;
 
-    // commentDate.appendChild(newDate);
-
     let newData = {
+        image: newImage,
         name: newName,
         date: newDate,
         comment: newText

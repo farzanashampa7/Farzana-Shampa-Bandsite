@@ -10,8 +10,6 @@
     object-position: center;
 }
 
-// @mixin link-border()
-
 @mixin nav-bar {
     .nav {
         background-color: $bg-primary;
@@ -97,7 +95,7 @@
         
                     
                     @include tablet {
-                        width: 105px;
+                        width: 90px;
                         left: -5px;
                         bottom: -29px;
                     }

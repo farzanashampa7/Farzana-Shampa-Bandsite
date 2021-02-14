@@ -242,8 +242,12 @@
     &__input {
         padding: 2rem 0;
         margin-bottom: 2rem;
-        border: 2px solid $bg-primary;
+        border: 2px solid $color-primary;
         border-radius: .5rem;
+
+        &:focus{
+            border-color: $bg-primary;
+        }
     }
 
     &__btn {
@@ -297,7 +301,7 @@ textarea[placeholder] {
         height: 60px;
         border-radius: 50%;
         margin-right: 2rem;
-        // background-color: black;
+        background-color: black;
     }
 
     &__main {
@@ -321,7 +325,6 @@ textarea[placeholder] {
     &__date {
         font-size: 1.8rem;
         color: $color-primary;
-        // float:right;
     }
 
     &__text {
