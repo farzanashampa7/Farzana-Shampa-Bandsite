@@ -1,0 +1,337 @@
+@use './partials/resets' as *;
+@use './partials/variables' as *;
+@use './partials/typography' as *;
+@use './partials/mixins' as *;
+
+.wrapper {
+    max-width: 1275px;
+    width: 95%;
+    margin: 0 auto;
+
+    @include desktop {
+        max-width: 1500px;
+        width: 90%;
+    }
+}
+
+//--------nav---------//
+
+@include nav-bar;
+
+//--------main-------//
+.hero-container {
+    background-image: url(../assets/images/Photo-gallery-11.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 70vw;
+    position: relative;
+    @include flex-align;
+
+    &::before {
+        content: '';
+        width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: block;
+        background: rgba(0,0,0,.5);
+    }
+
+    @include tablet {
+        height: 55vw;
+    }
+
+    &__text {
+        width: 70vw;
+        margin: 0;
+        font-size: 8vw;
+        color: $color-white;
+        position: absolute;
+        top: 35%;
+        z-index: 100;
+
+        @include tablet {
+            font-size: clamp(4.2rem, 5rem,6rem);
+            width: 500px;
+        }
+
+        @include desktop {
+            font-size: 5.5rem;
+        }
+    }
+}
+
+.about {
+    &__title {
+        margin: 5rem 0 3rem;
+        font-size: 3rem;
+        text-transform: capitalize;
+        color: $bg-primary;
+
+        @include tablet {
+            font-size: 3.6rem;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 50vw;
+        @include image-fit;
+
+        @include tablet {
+            height: 45vw;
+        }
+    }
+}
+
+.block-quote {
+    margin: 0;
+
+    &__text {
+        font-size: 2rem;
+        font-weight: $font-medium;
+        color: $bg-primary;
+        letter-spacing: .1rem;
+
+        @include tablet {
+            font-weight: $font-heavy;
+        }
+    }
+    &__footer {
+        font-size: 1.8rem;
+        font-weight: $font-medium;
+        color: $bg-primary;
+    }
+}
+
+.details {
+    margin-top: 5rem;
+
+    &__title {
+        font-size: 2.2rem;
+        font-weight: $font-medium;
+        color: #000;
+        color: $bg-primary;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            font-weight: $font-heavy;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__text {
+        font-size: 1.8rem;
+        line-height: 1.7;
+        letter-spacing: .1rem;
+        color: $bg-primary;
+
+        @include tablet {
+            width: calc(50% - 2rem);
+            margin-right: 2rem;
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.gallery {
+    background-color: $color-tertiary;
+    padding-bottom: 3rem;
+
+    &__title{
+        font-size: 3rem;
+        color: $bg-primary;
+        padding-top: 4rem;
+
+        @include tablet {
+            font-size: 3.6rem;
+        }
+    }
+
+    &__container {
+
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__image {
+        @include image-fit;
+        width: 100%;
+        margin-bottom: 2rem;
+
+        &:hover {
+            filter: grayscale(100%);
+        }
+
+        @include tablet {
+            width: 30%;
+            margin: 1.2rem;
+            flex-grow: 1;
+        }
+    }
+}
+
+.comments {
+    padding-bottom: 3rem;
+    
+
+    &__title {
+        font-size: 3rem;
+        color: $bg-primary;
+    }
+
+    &__js__list {
+        @include tablet {
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        @include desktop {
+            width: 56%;
+        }
+    }
+
+    &__list {
+        display: flex;
+        border-bottom: 2px solid $color-secondary;
+        padding-bottom: 2rem;
+
+        @include tablet {
+            margin: 0 auto;
+            width: 75%;
+        }
+
+        @include desktop {
+            margin: 0 auto;
+            width: 60%;
+        }
+    }
+    &__image {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+        margin-right: 1.5rem;
+        margin-top: 2.5rem;
+    }
+    &__form {
+        width: 84%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    &__label {
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        color: $color-primary
+    }
+    &__input {
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+        border: 2px solid $color-primary;
+        border-radius: .5rem;
+
+        &:focus{
+            border-color: $bg-primary;
+        }
+    }
+
+    &__btn {
+        padding: 1.5rem 0;
+        background-color: $bg-primary;
+        border-style: none;
+        color: $color-white;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        border-radius: .5rem;
+        margin-bottom: 3rem;
+
+        @include tablet {
+            width: 30%;
+            align-self: flex-end;
+        }
+       
+    }
+}
+
+input[placeholder] {
+    font-size: 1.6rem;
+    font-family: 'Avenir Next';
+    padding-left: 2rem;
+    color: $bg-primary;
+    opacity: 1;
+}
+
+textarea[placeholder] {
+    font-size: 1.6rem;
+    font-family: 'Avenir Next';
+    padding-left: 2rem;
+    color: $bg-primary;
+    opacity: 1;
+}
+
+
+
+.article {
+    padding: 6rem 0;
+    border-bottom: 2px solid $color-secondary;
+
+    &__item {
+        display: flex;
+        
+    }
+
+    &__image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 2rem;
+        background-color: black;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__info {
+        display: flex;
+    }
+
+    &__author {
+        font-size: 1.8rem;
+        color: $bg-primary;
+        font-weight: 500;
+        display: block;
+    }
+
+    &__date {
+        font-size: 1.8rem;
+        color: $color-primary;
+        margin-left: 2rem;
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        color: $bg-primary;
+    }
+}
+
+//---------footer---------//
+@include footer;

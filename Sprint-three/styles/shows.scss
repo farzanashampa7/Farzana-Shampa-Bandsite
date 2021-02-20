@@ -1,0 +1,221 @@
+@use './partials/resets' as *;
+@use './partials/variables' as *;
+@use './partials/typography' as *;
+@use './partials/mixins' as *;
+
+.wrapper {
+    max-width: 1275px;
+    width: 92%;
+    margin: 0 auto;
+
+    @include desktop {
+        max-width: 1500px;
+        width: 90%;
+    }
+}
+
+//-----------nav---------//
+@include nav-bar;
+
+
+//----------main-----------//
+.hero-container {
+    background-image: url(../assets/images/Photo-gallery-15.jpg);
+    background-size: cover;
+    background-position: center;
+    // height: 70vw;
+    height: 140vw;
+    max-height: 600px;
+    position: relative;
+    @include flex-align;
+
+    @include tablet {
+        height: 70vw;
+    }
+
+    &__title {
+        color: $color-white;
+        font-size: clamp(1.8rem,2rem);
+        font-weight: 500;
+        margin-top: 0;
+        @include tablet {
+            font-size: 2.2rem;
+        }
+    }
+
+    &__body {
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__text {
+        width: clamp(200px, 75vw, 350px);
+        margin: 0;
+        font-size: clamp(3rem, 8vw, 4rem);
+        color: $color-white;
+        padding-bottom: 2rem;
+
+
+        @include tablet {
+            font-size: clamp(4.2rem, 5rem, 6rem);
+            width: 500px;
+        }
+
+        @include desktop {
+            font-size: 5.5rem;
+            width: 550px;
+        }
+    }
+
+    &__sound {
+        width: 100%;
+        height: 130px;
+        margin-top: 2rem;
+        border-radius: .7rem;
+
+        @include tablet {
+            width: 50%;
+        }
+
+        @include desktop {
+            width: 40%;
+            height: 180px;
+        }
+    } 
+}
+
+.shows {
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include desktop {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__heading {
+        font-size: 3rem;
+        color: $bg-primary;
+
+        @include desktop {
+            font-size: 3.4rem;
+        }
+    }
+
+    &__schedule {
+        display: flex;
+        flex-direction: column;
+
+        @include desktop {
+            padding-top: 2rem;
+            width: 75%;
+        }
+    }
+
+    &__label {
+        display: none;
+        width: 65%;
+
+        @include tablet {
+            display:flex;
+            justify-content: space-between;
+           
+        }
+    }
+
+    &__details {
+        padding-bottom: 3rem;
+        border-bottom: 2px solid $color-secondary;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 0;
+            padding: 2rem 0;
+        }
+    }
+
+    &__title{
+        color: $color-primary;
+        font-size: 1.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+
+
+    &__date {
+        font-size: 2rem;
+        font-weight: 500;
+        color: $bg-primary;
+        text-transform: capitalize;
+        
+
+        @include tablet{ 
+            flex-basis: 18%;
+        }
+    }
+
+    &__venue {
+        font-size: 1.8rem;
+        text-transform: capitalize;
+        color: $bg-primary;
+
+        @include tablet{ 
+            flex-basis: 20%;
+        }
+    }
+
+    &__location {
+        font-size: 1.8rem;
+        text-transform: capitalize;
+        color: $bg-primary;
+
+        @include tablet{ 
+            flex-basis: 20%;
+        }
+    }
+
+    &__ticket {
+        text-decoration: none;
+        color: $color-white;
+        text-transform: uppercase;
+        background-color: $bg-primary;
+        font-size: 1.8rem;
+        font-weight: 500;
+        text-align: center;
+        padding: 4vw 0;
+        display: block;
+        border-radius: .5rem;
+        margin-top: 3rem;
+
+        @include tablet {
+            font-size: 1.6rem;
+            padding: 1.5rem 3.5rem;
+            margin-top: 0;
+        }
+    }
+}
+.toggle {
+    @include tablet {
+        display: none;
+    }
+}
+
+//---------footer---------//
+@include footer;
+

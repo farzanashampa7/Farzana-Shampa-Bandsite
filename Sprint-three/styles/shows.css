@@ -1,0 +1,533 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-BoldIt.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-BoldIt.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Heavy.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-HeavyIt.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-HeavyIt.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Light.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Medium.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Thin.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-UltLt.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-UltLt.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Avenir Next";
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  max-width: 1275px;
+  width: 92%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    max-width: 1500px;
+    width: 90%;
+  }
+}
+
+.nav {
+  background-color: #323232;
+  height: 110px;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .nav {
+    height: 80px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav-bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+.nav__logo {
+  margin: 0;
+  padding-top: 1.5em;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .nav__logo {
+    font-size: 2rem;
+    padding-top: 0.5rem;
+  }
+}
+.nav__link {
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 2.8rem;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 0;
+}
+@media screen and (min-width: 768px) {
+  .nav__list {
+    margin-left: 5rem;
+  }
+}
+.nav__item {
+  list-style: none;
+}
+@media screen and (min-width: 768px) {
+  .nav__item {
+    margin: 0 3rem;
+    font-size: 1.8rem;
+  }
+}
+.nav__item__link {
+  color: #AFAFAF;
+  font-size: clamp(1.6rem, 1.8rem, 2rem);
+  font-weight: 500;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+.nav__item__link:hover {
+  cursor: pointer;
+  color: #0065ad;
+}
+.nav__item--active {
+  color: #ffffff;
+  position: relative;
+}
+.nav__item--active::after {
+  content: "";
+  width: 60vw;
+  position: absolute;
+  bottom: -26px;
+  left: -23vw;
+  border: 4px solid #ffffff;
+}
+@media screen and (min-width: 768px) {
+  .nav__item--active::after {
+    width: 90px;
+    left: -5px;
+    bottom: -29px;
+  }
+}
+
+.hero-container {
+  background-image: url(../assets/images/Photo-gallery-15.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 140vw;
+  max-height: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .hero-container {
+    height: 70vw;
+  }
+}
+.hero-container__title {
+  color: #ffffff;
+  font-size: clamp(1.8rem,2rem);
+  font-weight: 500;
+  margin-top: 0;
+}
+@media screen and (min-width: 768px) {
+  .hero-container__title {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero-container__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.hero-container__text {
+  width: clamp(200px, 75vw, 350px);
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 4rem);
+  color: #ffffff;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .hero-container__text {
+    font-size: clamp(4.2rem, 5rem, 6rem);
+    width: 500px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero-container__text {
+    font-size: 5.5rem;
+    width: 550px;
+  }
+}
+.hero-container__sound {
+  width: 100%;
+  height: 130px;
+  margin-top: 2rem;
+  border-radius: 0.7rem;
+}
+@media screen and (min-width: 768px) {
+  .hero-container__sound {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero-container__sound {
+    width: 40%;
+    height: 180px;
+  }
+}
+
+.shows {
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .shows {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.shows__heading {
+  font-size: 3rem;
+  color: #323232;
+}
+@media screen and (min-width: 1280px) {
+  .shows__heading {
+    font-size: 3.4rem;
+  }
+}
+.shows__schedule {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1280px) {
+  .shows__schedule {
+    padding-top: 2rem;
+    width: 75%;
+  }
+}
+.shows__label {
+  display: none;
+  width: 65%;
+}
+@media screen and (min-width: 768px) {
+  .shows__label {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.shows__details {
+  padding-bottom: 3rem;
+  border-bottom: 2px solid #E1E1E1;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .shows__details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0;
+    padding: 2rem 0;
+  }
+}
+.shows__title {
+  color: #AFAFAF;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.shows__date {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #323232;
+  text-transform: capitalize;
+}
+@media screen and (min-width: 768px) {
+  .shows__date {
+    flex-basis: 18%;
+  }
+}
+.shows__venue {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .shows__venue {
+    flex-basis: 20%;
+  }
+}
+.shows__location {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .shows__location {
+    flex-basis: 20%;
+  }
+}
+.shows__ticket {
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #323232;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 4vw 0;
+  display: block;
+  border-radius: 0.5rem;
+  margin-top: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .shows__ticket {
+    font-size: 1.6rem;
+    padding: 1.5rem 3.5rem;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .toggle {
+    display: none;
+  }
+}
+
+.contact {
+  background-color: #323232;
+  padding-bottom: 3rem;
+}
+.contact__lists {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .contact__lists {
+    padding-top: 3rem;
+  }
+}
+.contact__details {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .contact__details {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.contact__title {
+  font-size: 3rem;
+  color: #ffffff;
+  margin: 0;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .contact__title {
+    padding-top: 2rem;
+    font-size: 3.6rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact__socials {
+    margin-left: 5rem;
+  }
+}
+.contact__socials__icons {
+  margin-right: 3rem;
+}
+.contact__logo {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .contact__logo {
+    display: inherit;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact__logo__link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+.contact__info {
+  margin-top: 4rem;
+}
+@media screen and (min-width: 768px) {
+  .contact__info {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .contact__info {
+    justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .contact__section {
+    margin-right: 5rem;
+  }
+}
+.contact__individuals {
+  margin: 3rem 0;
+}
+.contact__individuals__title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .contact__individuals__title {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .contact__individuals__title {
+    font-size: 1.8rem;
+  }
+}
+.contact__individuals__address {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin: 0.5rem 0;
+}
+@media screen and (min-width: 768px) {
+  .contact__individuals__address {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .contact__individuals__address {
+    font-size: 1.7rem;
+  }
+}
+.contact__individuals__email {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .contact__individuals__email {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .contact__individuals__email {
+    font-size: 1.6rem;
+  }
+}
+
+.copyright {
+  padding: 1rem 0 2rem;
+}
+@media screen and (min-width: 768px) {
+  .copyright {
+    display: flex;
+  }
+}
+.copyright__text {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+}
+@media screen and (min-width: 768px) {
+  .copyright__text {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+  }
+}/*# sourceMappingURL=shows.css.map */

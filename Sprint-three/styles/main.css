@@ -1,0 +1,641 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-BoldIt.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-BoldIt.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Heavy.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-HeavyIt.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-HeavyIt.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Light.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Medium.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Thin.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-UltLt.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-UltLt.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Avenir Next";
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  max-width: 1275px;
+  width: 95%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    max-width: 1500px;
+    width: 90%;
+  }
+}
+
+.nav {
+  background-color: #323232;
+  height: 110px;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .nav {
+    height: 80px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav-bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+.nav__logo {
+  margin: 0;
+  padding-top: 1.5em;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .nav__logo {
+    font-size: 2rem;
+    padding-top: 0.5rem;
+  }
+}
+.nav__link {
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 2.8rem;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 0;
+}
+@media screen and (min-width: 768px) {
+  .nav__list {
+    margin-left: 5rem;
+  }
+}
+.nav__item {
+  list-style: none;
+}
+@media screen and (min-width: 768px) {
+  .nav__item {
+    margin: 0 3rem;
+    font-size: 1.8rem;
+  }
+}
+.nav__item__link {
+  color: #AFAFAF;
+  font-size: clamp(1.6rem, 1.8rem, 2rem);
+  font-weight: 500;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+.nav__item__link:hover {
+  cursor: pointer;
+  color: #0065ad;
+}
+.nav__item--active {
+  color: #ffffff;
+  position: relative;
+}
+.nav__item--active::after {
+  content: "";
+  width: 60vw;
+  position: absolute;
+  bottom: -26px;
+  left: -23vw;
+  border: 4px solid #ffffff;
+}
+@media screen and (min-width: 768px) {
+  .nav__item--active::after {
+    width: 90px;
+    left: -5px;
+    bottom: -29px;
+  }
+}
+
+.hero-container {
+  background-image: url(../assets/images/Photo-gallery-11.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 70vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.hero-container::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+}
+@media screen and (min-width: 768px) {
+  .hero-container {
+    height: 55vw;
+  }
+}
+.hero-container__text {
+  width: 70vw;
+  margin: 0;
+  font-size: 8vw;
+  color: #ffffff;
+  position: absolute;
+  top: 35%;
+  z-index: 100;
+}
+@media screen and (min-width: 768px) {
+  .hero-container__text {
+    font-size: clamp(4.2rem, 5rem,6rem);
+    width: 500px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero-container__text {
+    font-size: 5.5rem;
+  }
+}
+
+.about__title {
+  margin: 5rem 0 3rem;
+  font-size: 3rem;
+  text-transform: capitalize;
+  color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .about__title {
+    font-size: 3.6rem;
+  }
+}
+.about__image {
+  width: 100%;
+  height: 50vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+@media screen and (min-width: 768px) {
+  .about__image {
+    height: 45vw;
+  }
+}
+
+.block-quote {
+  margin: 0;
+}
+.block-quote__text {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #323232;
+  letter-spacing: 0.1rem;
+}
+@media screen and (min-width: 768px) {
+  .block-quote__text {
+    font-weight: 700;
+  }
+}
+.block-quote__footer {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #323232;
+}
+
+.details {
+  margin-top: 5rem;
+}
+.details__title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #000;
+  color: #323232;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .details__title {
+    font-weight: 700;
+  }
+}
+.details__container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .details__container {
+    flex-direction: row;
+  }
+}
+.details__text {
+  font-size: 1.8rem;
+  line-height: 1.7;
+  letter-spacing: 0.1rem;
+  color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .details__text {
+    width: calc(50% - 2rem);
+    margin-right: 2rem;
+    font-size: 1.8rem;
+  }
+}
+
+.gallery {
+  background-color: #FAFAFA;
+  padding-bottom: 3rem;
+}
+.gallery__title {
+  font-size: 3rem;
+  color: #323232;
+  padding-top: 4rem;
+}
+@media screen and (min-width: 768px) {
+  .gallery__title {
+    font-size: 3.6rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .gallery__container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.gallery__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.gallery__image:hover {
+  filter: grayscale(100%);
+}
+@media screen and (min-width: 768px) {
+  .gallery__image {
+    width: 30%;
+    margin: 1.2rem;
+    flex-grow: 1;
+  }
+}
+
+.comments {
+  padding-bottom: 3rem;
+}
+.comments__title {
+  font-size: 3rem;
+  color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .comments__js__list {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments__js__list {
+    width: 56%;
+  }
+}
+.comments__list {
+  display: flex;
+  border-bottom: 2px solid #E1E1E1;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .comments__list {
+    margin: 0 auto;
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments__list {
+    margin: 0 auto;
+    width: 60%;
+  }
+}
+.comments__image {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+  margin-top: 2.5rem;
+}
+.comments__form {
+  width: 84%;
+  display: flex;
+  flex-direction: column;
+}
+.comments__label {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #AFAFAF;
+}
+.comments__input {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  border: 2px solid #AFAFAF;
+  border-radius: 0.5rem;
+}
+.comments__input:focus {
+  border-color: #323232;
+}
+.comments__btn {
+  padding: 1.5rem 0;
+  background-color: #323232;
+  border-style: none;
+  color: #ffffff;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .comments__btn {
+    width: 30%;
+    align-self: flex-end;
+  }
+}
+
+input[placeholder] {
+  font-size: 1.6rem;
+  font-family: "Avenir Next";
+  padding-left: 2rem;
+  color: #323232;
+  opacity: 1;
+}
+
+textarea[placeholder] {
+  font-size: 1.6rem;
+  font-family: "Avenir Next";
+  padding-left: 2rem;
+  color: #323232;
+  opacity: 1;
+}
+
+.article {
+  padding: 6rem 0;
+  border-bottom: 2px solid #E1E1E1;
+}
+.article__item {
+  display: flex;
+}
+.article__image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 2rem;
+  background-color: black;
+}
+.article__main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.article__info {
+  display: flex;
+}
+.article__author {
+  font-size: 1.8rem;
+  color: #323232;
+  font-weight: 500;
+  display: block;
+}
+.article__date {
+  font-size: 1.8rem;
+  color: #AFAFAF;
+  margin-left: 2rem;
+}
+.article__text {
+  font-size: 1.6rem;
+  color: #323232;
+}
+
+.contact {
+  background-color: #323232;
+  padding-bottom: 3rem;
+}
+.contact__lists {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .contact__lists {
+    padding-top: 3rem;
+  }
+}
+.contact__details {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .contact__details {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.contact__title {
+  font-size: 3rem;
+  color: #ffffff;
+  margin: 0;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .contact__title {
+    padding-top: 2rem;
+    font-size: 3.6rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact__socials {
+    margin-left: 5rem;
+  }
+}
+.contact__socials__icons {
+  margin-right: 3rem;
+}
+.contact__logo {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .contact__logo {
+    display: inherit;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact__logo__link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+.contact__info {
+  margin-top: 4rem;
+}
+@media screen and (min-width: 768px) {
+  .contact__info {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .contact__info {
+    justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .contact__section {
+    margin-right: 5rem;
+  }
+}
+.contact__individuals {
+  margin: 3rem 0;
+}
+.contact__individuals__title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .contact__individuals__title {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .contact__individuals__title {
+    font-size: 1.8rem;
+  }
+}
+.contact__individuals__address {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin: 0.5rem 0;
+}
+@media screen and (min-width: 768px) {
+  .contact__individuals__address {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .contact__individuals__address {
+    font-size: 1.7rem;
+  }
+}
+.contact__individuals__email {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .contact__individuals__email {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .contact__individuals__email {
+    font-size: 1.6rem;
+  }
+}
+
+.copyright {
+  padding: 1rem 0 2rem;
+}
+@media screen and (min-width: 768px) {
+  .copyright {
+    display: flex;
+  }
+}
+.copyright__text {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+}
+@media screen and (min-width: 768px) {
+  .copyright__text {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+  }
+}/*# sourceMappingURL=main.css.map */
