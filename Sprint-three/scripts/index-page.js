@@ -31,7 +31,6 @@ function getComments() {
         .then(result => {
             commentNew = [];
             newObject(result.data);
-            // console.log(commentNew)
             commentLists(commentNew);
         })
         .catch(error => {
@@ -60,7 +59,7 @@ function commentLists(arrayList) {
 
         let commentImage = document.createElement('img');
         commentImage.classList.add('article__image');
-        commentImage.setAttribute('src', item.image);
+        commentImage.setAttribute('src', './assets/images/pp.jpg');
         commentItem.appendChild(commentImage);
 
         let commentDiv = document.createElement('div');
@@ -84,8 +83,27 @@ function commentLists(arrayList) {
         let commentText = document.createElement('p');
         commentText.classList.add('article__text');
         commentText.innerText = item.comment;
-
         commentDiv.appendChild(commentText);
+
+        let commentReact = document.createElement('div');
+        commentReact.classList.add('article__react');
+        commentDiv.appendChild(commentReact);
+
+        let commentLikeIcon = document.createElement('img');
+        commentLikeIcon.classList.add('article__icon');
+        commentLikeIcon.setAttribute('src', './assets/icons/SVG/favorite_border-black-18dp.svg');
+        commentReact.appendChild(commentLikeIcon);
+
+        let commentCount = document.createElement('span');
+        commentCount.classList.add('article__count');
+        commentCount.innerText = `${item.likes} likes`;
+        commentReact.appendChild(commentCount);
+
+        let commentDelete = document.createElement('img');
+        commentDelete.classList.add('article__delete');
+        commentDelete.setAttribute('src', './assets/icons/SVG/delete-black-18dp.svg');
+        commentReact.appendChild(commentDelete);
+
     })
 
 }
@@ -111,6 +129,12 @@ form.addEventListener('submit', event => {
     form.reset();
 });
 
+// let hitLike = document.querySelector('article__icon');
+
+// hitLike.addEventListener('click', event => {
+//     event.preventDefault();
+//     hitLike.style.backgroundColor = 'red';
+// })
 
 
 

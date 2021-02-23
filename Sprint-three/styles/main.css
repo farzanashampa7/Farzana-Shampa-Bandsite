@@ -168,10 +168,10 @@ body {
 }
 .nav__item--active::after {
   content: "";
-  width: 60vw;
+  width: 50vw;
   position: absolute;
   bottom: -26px;
-  left: -23vw;
+  left: -22vw;
   border: 4px solid #ffffff;
 }
 @media screen and (min-width: 768px) {
@@ -351,21 +351,24 @@ body {
 }
 
 .comments {
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 }
 .comments__title {
   font-size: 3rem;
   color: #323232;
 }
+.comments__js__list {
+  width: 90%;
+}
 @media screen and (min-width: 768px) {
   .comments__js__list {
-    width: 75%;
+    width: 76%;
     margin: 0 auto;
   }
 }
 @media screen and (min-width: 1280px) {
   .comments__js__list {
-    width: 56%;
+    width: 62%;
   }
 }
 .comments__list {
@@ -397,9 +400,14 @@ body {
   margin-top: 2.5rem;
 }
 .comments__form {
-  width: 84%;
+  width: 75%;
   display: flex;
   flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .comments__form {
+    width: 90%;
+  }
 }
 .comments__label {
   margin-bottom: 1rem;
@@ -460,9 +468,9 @@ textarea[placeholder] {
 .article__image {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
+  border-radius: 60%;
   margin-right: 2rem;
-  background-color: black;
+  background-color: grey;
 }
 .article__main {
   display: flex;
@@ -486,6 +494,20 @@ textarea[placeholder] {
 .article__text {
   font-size: 1.6rem;
   color: #323232;
+}
+.article__react {
+  display: flex;
+}
+.article__icon {
+  width: 20px;
+  margin-right: 0.5rem;
+}
+.article__count {
+  font-size: 1.5rem;
+  margin-right: 2rem;
+}
+.article__delete {
+  width: 20px;
 }
 
 .contact {

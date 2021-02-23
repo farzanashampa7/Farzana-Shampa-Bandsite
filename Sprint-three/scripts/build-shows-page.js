@@ -1,11 +1,8 @@
 
-// let showsList = [];
-
 function getShowLists() {
     axios
         .get('https://project-1-api.herokuapp.com/showdates?api_key= fd646bde-a6a5-4e13-9788-cd0d1f4cc49b')
         .then(result => {
-            // showsList = result.data;
             displayShowLists(result.data);
         })
         .catch(error => {

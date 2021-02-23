@@ -18,6 +18,7 @@
 
 @include nav-bar;
 
+
 //--------main-------//
 .hero-container {
     background-image: url(../assets/images/Photo-gallery-11.jpg);
@@ -184,7 +185,7 @@
 }
 
 .comments {
-    padding-bottom: 3rem;
+    padding-bottom: 5rem;
     
 
     &__title {
@@ -193,13 +194,14 @@
     }
 
     &__js__list {
+        width: 90%;
         @include tablet {
-            width: 75%;
+            width: 76%;
             margin: 0 auto;
         }
 
         @include desktop {
-            width: 56%;
+            width: 62%;
         }
     }
 
@@ -227,10 +229,15 @@
         margin-right: 1.5rem;
         margin-top: 2.5rem;
     }
+
     &__form {
-        width: 84%;
+        width: 75%;
         display: flex;
         flex-direction: column;
+
+        @include tablet {
+            width: 90%;
+        }
         
     }
     &__label {
@@ -248,6 +255,7 @@
         &:focus{
             border-color: $bg-primary;
         }
+
     }
 
     &__btn {
@@ -299,9 +307,9 @@ textarea[placeholder] {
     &__image {
         width: 60px;
         height: 60px;
-        border-radius: 50%;
+        border-radius: 60%;
         margin-right: 2rem;
-        background-color: black;
+        background-color: grey;
     }
 
     &__main {
@@ -330,6 +338,24 @@ textarea[placeholder] {
     &__text {
         font-size: 1.6rem;
         color: $bg-primary;
+    }
+
+    &__react {
+        display: flex;
+    }
+
+    &__icon {
+        width: 20px;
+        margin-right: 0.5rem;
+    }
+
+    &__count {
+        font-size: 1.5rem;
+        margin-right: 2rem;
+    }
+
+    &__delete {
+        width: 20px;
     }
 }
 
